@@ -19,6 +19,11 @@ public class Clientes {
 
     private String direccion;
 
+    @Column(name="user_name")
+    private String nombreUsuario; //numero largos
+
+    private String password;
+
     @Column(name="correo_electronico")
     private String correoElectronico;
 
