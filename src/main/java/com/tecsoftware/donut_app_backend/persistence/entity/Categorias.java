@@ -1,42 +1,47 @@
 package com.tecsoftware.donut_app_backend.persistence.entity;
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name="categories")
+@Table (name="categorias")
 public class Categorias {
-
-    @Id //llave primaria
+    //Llave primaria
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name="id_categories")
-    private Integer idCategorias;
+    @Column(name="id_categoria")
+    private Integer idCategoria;
 
-    @Column (name="category_name")
-    private String nombreCategoria;
+    private Integer description;
 
-    @Column (name="icon_path") //snake case
-    private String icon_path;// c
+    private Boolean estado;
 
-    public Integer getIdCategorias() {
-        return idCategorias;
+    //Terminación de relación - vista productos
+    @OneToMany (mappedBy= "Categoria")
+    private List<Producto> productos;
+
+    //Getters y setters - Evitar Terminaciones de relaciones
+
+    public Integer getIdCategoria() {
+        return idCategoria;
     }
 
-    public void setIdCategorias(Integer idCategorias) {
-        this.idCategorias = idCategorias;
+    public void setIdCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
-    public String getNombreCategoria() {
-        return nombreCategoria;
+    public Integer getDescription() {
+        return description;
     }
 
-    public void setNombreCategoria(String nombreCategoria) {
-        this.nombreCategoria = nombreCategoria;
+    public void setDescription(Integer description) {
+        this.description = description;
     }
 
-    public String getIcon_path() {
-        return icon_path;
+    public Boolean getEstado() {
+        return estado;
     }
 
-    public void setIcon_path(String icon_path) {
-        this.icon_path = icon_path;
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
     }
 }
