@@ -16,7 +16,7 @@ public class Categorias {
     private Boolean estado;
 
     //Terminación de relación - vista productos
-    @OneToMany (mappedBy= "Categoria")
+    @OneToMany (mappedBy= "categoria")
     private List<Producto> productos;
 
     //Getters y setters - Evitar Terminaciones de relaciones

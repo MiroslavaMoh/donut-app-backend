@@ -3,7 +3,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table (name="compras_productos)")
+@Table (name="compras_productos")
 public class CompraProducto {
 
     //ID de CompraProductosPK
@@ -19,13 +19,15 @@ public class CompraProducto {
     //Llave compuesta
     //Final de relación con compra
     @ManyToOne
-    @JoinColumn(name="id_compra")
+    @MapsId("idCompra") // Enlaza con el campo del embeddable
+    @JoinColumn(name = "id_compra")
     private Compras compra;
 
     //final de relacion con producto
     @ManyToOne
-    @JoinColumn(name="id_producto")
-    private Producto productos;
+    @MapsId("idProducto") // Enlaza con el campo del embeddable
+    @JoinColumn(name = "id_producto")
+    private Producto producto;
 
     //Getters y setters - Evitar Terminaciones de relaciones
 
@@ -59,5 +61,21 @@ public class CompraProducto {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Compras getCompra() {
+        return compra;
+    }
+
+    public void setCompra(Compras compra) {
+        this.compra = compra;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 }

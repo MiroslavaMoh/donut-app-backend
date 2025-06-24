@@ -12,7 +12,7 @@ public class Compras {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     //llave forenea
-    @Column (name="id_producto")
+    @Column (name="id_compra")
     private Integer idCompra;
 
     //llave forenea
@@ -33,8 +33,7 @@ public class Compras {
     @JoinColumn(name = "id_cliente", insertable=false, updatable=false)
     private Clientes cliente;
 
-    // Final de relación con productos - Vista a lista productos
-    @OneToMany(mappedBy="producto")
+    @OneToMany(mappedBy = "compra") // debe coincidir con nombre en CompraProducto
     private List<CompraProducto> productos;
 
     //Getters y setters - Evitar Terminaciones de relaciones

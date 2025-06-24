@@ -32,10 +32,18 @@ public class Producto {
 
     private Boolean estado;
 
+    @Column (name="id_tienda")
+    private Integer idTienda;
+
     //Inicio de relación con categorias
     @ManyToOne
     @JoinColumn(name="id_categoria", insertable=false, updatable = false) //insertar sin modificar
     private Categorias categoria;
+
+    @ManyToOne
+    @JoinColumn(name="id_tienda", insertable=false, updatable = false) //insertar sin modificar
+    private Tienda tienda;
+
 
     //Getters y setters - Evitar Terminaciones de relaciones
     public Integer getIdProducto() {

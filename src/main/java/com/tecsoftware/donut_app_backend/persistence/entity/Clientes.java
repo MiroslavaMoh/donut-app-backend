@@ -30,6 +30,7 @@ public class Clientes {
     @OneToMany (mappedBy="cliente")
     private List<Compras> compras;
 
+
     //Getters y setters - Evitar Terminaciones de relaciones
     public String getIdClientes() {
         return idClientes;
