@@ -11,7 +11,9 @@ public class Categorias {
     @Column(name="id_categoria")
     private Integer idCategoria;
 
-    private Integer description;
+    @Column(name = "descripcion")  // Aquí pones el nombre real que está en la BD
+    private String descripcion;
+
 
     private Boolean estado;
 
@@ -29,12 +31,12 @@ public class Categorias {
         this.idCategoria = idCategoria;
     }
 
-    public Integer getDescription() {
-        return description;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescription(Integer description) {
-        this.description = description;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public Boolean getEstado() {

@@ -8,25 +8,23 @@ public class Tienda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_tienda")
-    private String idTienda;
+    private Integer idTienda;
 
-    private String nombre;
+    private String nombre_tienda;
 
-
-
-    public String getIdTienda() {
+    public Integer getIdTienda() {
         return idTienda;
     }
 
-    public void setIdTienda(String idTienda) {
+    public void setIdTienda(Integer idTienda) {
         this.idTienda = idTienda;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombre_tienda() {
+        return nombre_tienda;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre_tienda(String nombre_tienda) {
+        this.nombre_tienda = nombre_tienda;
     }
 }

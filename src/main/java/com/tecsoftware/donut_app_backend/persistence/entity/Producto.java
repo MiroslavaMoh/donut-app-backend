@@ -22,7 +22,8 @@ public class Producto {
     @Column (name="image_path")
     private String imagePath;
 
-    private String description;
+   @Column(name = "description") // nombre real en la base de datos
+   private String description;   // nombre interno en Java
 
     @Column (name="precio_venta")
     private Double precioVenta;
@@ -86,13 +87,9 @@ public class Producto {
         this.imagePath = imagePath;
     }
 
-    public String getDescription() {
-        return description;
-    }
+   public String getDescription() { return description; }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    public void setDescription(String description) { this.description = description;}
 
     public Double getPrecioVenta() {
         return precioVenta;
